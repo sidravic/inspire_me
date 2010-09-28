@@ -1,0 +1,3300 @@
+
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (192.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (162.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100922115743)
+  [4;35;1mSQL (96.8ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (102.7ms)[0m   [0;1mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [4;35;1mSQL (100.6ms)[0m   [0mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [4;36;1mSQL (20.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100922115743')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (17.7ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (12.0ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100922115743)
+Migrating to CreateUsers (20100922120152)
+  [4;36;1mSQL (215.5ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `first_name` varchar(255), `last_name` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100922120152')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mdescribe `sessions`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-22 18:21:04) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-22 18:21:04) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:21:09) [GET]
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `application' for #<ActionView::Base:0x101e88bc0>) on line #7 of app/views/layouts/application.erb:
+4:   <head>
+5:     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+6:     <%= "Inspire | " +   (yield(:title) || controller.action_name.to_s) %>
+7:     <%= stylesheet_link_tag application  %>
+8:   </head>
+9: 
+10:   <body>
+
+    app/views/layouts/application.erb:7
+
+Rendered rescues/_trace (84.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:21:34) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:26:47) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 12ms (View: 9, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:32:37) [GET]
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (Missing template shared/_user_navigation.erb in view path app/views) on line #15 of app/views/layouts/application.erb:
+12: 
+13:   <body>
+14:     <div class="page-headers">
+15:       <%= render :partial => "shared/user_navigation" %>
+16:     </div>
+17: 
+18:     <div class="page-content">
+
+    app/views/layouts/application.erb:15
+
+Rendered rescues/_trace (92.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:32:52) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (1.0ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:33:08) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:33:35) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:34:06) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:37:26) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:39:14) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.5ms)
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:41:18) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:41:51) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:44:56) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:47:37) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:47:57) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:48:59) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:49:24) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:49:43) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:50:01) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:50:24) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:50:32) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:50:48) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.8ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:51:04) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:53:41) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.3ms)
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:54:00) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:54:11) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 48ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:54:12) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:57:56) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:59:06) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:59:14) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:59:26) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 5ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 18:59:56) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:00:50) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.3ms)
+Completed in 24ms (View: 22, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:08:56) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:11:04) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:17:26) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:18:12) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:18:45) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:19:27) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:19:35) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:20:01) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 10ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:20:47) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:21:17) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:23:09) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:23:44) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:24:11) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:24:24) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:24:30) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 8ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:25:04) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:25:14) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.9ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:25:22) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 8ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:27:44) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:28:18) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:29:32) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 9ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:30:55) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:31:03) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:31:20) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:31:52) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:32:27) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:32:59) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:34:42) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:35:03) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.9ms)
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:35:11) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 50ms (View: 48, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:35:24) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:35:26) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:35:33) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.6ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:36:23) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.5ms)
+Completed in 8ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:37:03) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.4ms)
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:37:12) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.4ms)
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:39:40) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:40:13) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:41:21) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:41:33) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:42:30) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 29ms (View: 27, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:42:42) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:43:34) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:44:15) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:44:39) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:44:51) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:45:20) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:53:51) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.6ms)
+Completed in 138ms (View: 137, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:54:59) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.2ms)
+Rendered shared/_footer (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:55:36) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:55:48) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 7ms (View: 5, DB: 2) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:56:18) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:56:52) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 19:58:52) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 20:01:28) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 6ms (View: 4, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 20:01:51) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.3ms)
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 20:02:05) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 9ms (View: 7, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-22 20:02:44) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-23 14:03:54) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-23 14:03:54) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-23 14:03:59) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.4ms)
+Rendered shared/_footer (26.6ms)
+Completed in 472ms (View: 279, DB: 191) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (47.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (37.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100922115743)
+Migrating to CreateUsers (20100922120152)
+Migrating to AddAuthlogicColumnsToUser (20100923085412)
+  [4;36;1mSQL (256.6ms)[0m   [0;1mALTER TABLE `users` ADD `crypted_password` varchar(255)[0m
+  [4;35;1mSQL (219.7ms)[0m   [0mALTER TABLE `users` ADD `password_salt` varchar(255)[0m
+  [4;36;1mSQL (86.8ms)[0m   [0;1mALTER TABLE `users` ADD `persistence_token` varchar(255)[0m
+  [4;35;1mSQL (90.6ms)[0m   [0mALTER TABLE `users` ADD `perishable_token` varchar(255)[0m
+  [4;36;1mSQL (111.0ms)[0m   [0;1mALTER TABLE `users` ADD `login_count` int(11)[0m
+  [4;35;1mSQL (108.9ms)[0m   [0mALTER TABLE `users` ADD `failed_login_count` int(11)[0m
+  [4;36;1mSQL (98.8ms)[0m   [0;1mALTER TABLE `users` ADD `last_login_at` datetime[0m
+  [4;35;1mSQL (88.9ms)[0m   [0mALTER TABLE `users` ADD `current_login_ip` varchar(255)[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100923085412')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100922115743)
+Migrating to CreateUsers (20100922120152)
+Migrating to AddAuthlogicColumnsToUser (20100923085412)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (52.6ms)[0m   [0;1mdescribe `sessions`[0m
+  [4;35;1mSQL (28.5ms)[0m   [0mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:03:20) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (2.0ms)
+Rendered shared/_footer (0.7ms)
+Completed in 63ms (View: 45, DB: 18) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:04:11) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:04:14) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:04:26) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 57ms (View: 55, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:04:39) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:05:02) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:05:12) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:05:31) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 16ms (View: 13, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:05:51) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:06:08) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:06:10) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 6ms (View: 5, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:06:53) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:07:31) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:07:43) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:08:13) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:08:49) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:09:05) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:09:40) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:09:59) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 14ms (View: 11, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:10:54) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:11:46) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:12:00) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:12:11) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 58ms (View: 56, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:12:42) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:12:45) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:13:21) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:13:55) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:14:06) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 73ms (View: 70, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:14:18) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 15ms (View: 12, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:14:36) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:14:44) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:14:49) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:15:10) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:15:57) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:16:17) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:18:13) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 19ms (View: 17, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:18:49) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-23 15:19:39) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '908b4b355851b851230dc15a6e1f993dd1090bfc54fc0aa5793b8714b14a4971989b2e8aa112588f42f794b22a6f7f3987e5027ea4aa7c02317ad487d2cd3a79') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 16:56:22) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"super_sid", "password"=>"abcabcabc", "email"=>"sid.ravichandran@gmail.com"}}
+
+RuntimeError ():
+  app/controllers/users_controller.rb:10:in `create'
+
+Rendered rescues/_trace (30.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 17:42:25) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2b83270e47da209736cb939f5cb58e758ec9d55b5019d20ccf60eff61bd0ecb6e2c547efffa0ca8e90e25f696d47927809c33b65b856608c2e6c684d2eb093a1') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 191ms (View: 13, DB: 4) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 17:44:29) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (37.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2baa94a0a20a28d648cda83b63a5c404d33490d617434d317b7e968733411695770cc9f734abc86f419035384118d38a9285f4bba418567b8d51bd29f020e5ea') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 75ms (View: 17, DB: 41) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 17:46:09) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (34.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '0f3bc83f2f2ea126759d4f5dbd6e4b9a28fd017d805eee1a675eb7daca09cee2694e02f546b6bafc278eedac87e5dcf7fe16e0e785c8d1dbae10a1d632b61bfc') LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 75ms (View: 16, DB: 39) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 17:51:01) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'a863f749c8d7baf5aa7569e82df7d5ab37adff0bdf7acd0421c6835ac10b2057ed875dfb52eb128f9527881b453cb24f1de8bfcaf4dbf0342ab83c343b56c507') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 130ms (View: 11, DB: 5) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 17:51:44) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (45.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '9454a9e843ebcb271b906e0dcb13c6ba2a991015c3da4e8ed8795a6553ef18a1e367eae29a11b0e3db5eec866688e2c382fbc1a0a0b6406d9ff51eb37022b7a0') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 75ms (View: 11, DB: 50) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 17:53:29) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (45.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'b8563bd1b32df36288db8be1cf8a511aadb869268191854b6155eca0d1f8d652bdce8ef4745af1efa0340d7e5229b464956de017674b1abc6545310e9f45ecdf') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 78ms (View: 14, DB: 49) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 17:54:15) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;36;1mUser Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd060eab04512b45c40f1d8f867e537efae11cfed227607a6d3d16ed0f4566cf6cc756207af3b72bfd514f424d20d9f3c0159346e1a0e9bc6711671ccf2635f6c') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 30ms (View: 11, DB: 5) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 18:11:48) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f48fae48e2b5af84381ad6b29d86101d6c22e6f9adc3a7fc53ff7bc36681a2c98d6faab83704f67689de34c585fe787bd9564d10c9e93ef1ee7bb4869d99d100') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 77ms (View: 11, DB: 4) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 18:57:58) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;36;1mUser Columns (76.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'b7542fb495100c7660a758ef57ac2a0db1033dbe3a3c243ca4a8d4d85bcfd478ff4c6cb3f55400be0b3c6756380e62a68e13877f6c4d583b69e6a12abcb41957') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 129ms (View: 11, DB: 79) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 18:58:33) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;35;1mUser Columns (58.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f99916a5e31776c9c5094e28f498c21a198e4f5e06e10fd37cc26dd7b8b93a888b8cc1d1398a2eb61aded2fe675279f6148cdb96bc9c226bfffbd7ef96757aff') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 106ms (View: 11, DB: 60) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 18:59:05) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (39.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '3d7971b5c212078ee6616750b727d653f01e42d8233612c0661c0913726909720a903293deb9228a6571341988e959e302a11157b9382a712060cb9655408a5d') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 70ms (View: 11, DB: 44) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 18:59:18) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '3a74d72355ea22502edea437ac2b1aec6aa3216357ccd5312ae45547c5640037f33959b83eadfd9bd8e36998d73ffe41df49af4f8d903e65d166fa6f76004611') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 128ms (View: 66, DB: 47) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-23 19:00:46) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"jbSdc9JvPk1+LRhPMsN7+NTZHpdnZqSNwg+WK2aYyg0=", "user"=>{"password_confirmation"=>"", "username"=>"super_sid", "password"=>"", "email"=>"sid.ravichandran@gmail.com."}}
+  [4;36;1mUser Columns (30.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com.') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '62013b2bc7136c8195c96e813503b596004aeca35fb9d4f2b627d7d526eb0f31291aab5303a33ea4ef1921e16ca7475c7b7aab90cc981e15a78c46ef2f11b028') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 99ms (View: 19, DB: 33) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-27 18:26:54) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-27 18:26:54) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-27 18:26:57) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (11.2ms)
+Rendered shared/_footer (52.2ms)
+Completed in 177ms (View: 121, DB: 54) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-27 18:27:03) [GET]
+  [4;36;1mUser Columns (82.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 121ms (View: 25, DB: 84) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-27 18:27:08) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"ZE/GdtQos56rcrIkl8NaiPU8LY9Ma0t3rUy1pPjEx0U=", "user"=>{"password_confirmation"=>"", "username"=>"", "password"=>"", "email"=>""}}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (43.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (61.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY '') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '43e45349423e6cd529c67f68988d33c40aede5c33a1427dc7b1604b066417a39dd82f323b56aa1a12f71d75ce2790f00fe2915cc06d66c0f805f09479bd65c18') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY '') LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 137ms (View: 12, DB: 110) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-27 18:59:34) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"ZE/GdtQos56rcrIkl8NaiPU8LY9Ma0t3rUy1pPjEx0U=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"super_sid", "password"=>"abcabcabc", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '5f3ffb2c6a8b4b87485195ac03e729e8c075b681275d40e405365f503a0ff8f97fcfbd210a5a37a34af213d35f6354d8b726125c697569cf5278bd38e64b50c0') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '13') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-27 13:29:34', '783d8d508117966cbf49017874f2dbfdf339b9d340e3030493ba28d13225ae47b500f3190a71bba1e8446c44a1b028212c859aee7734d1baea70aafed387a699', '2010-09-27 13:29:34', 'mrikyDjM-DZeKyi5TVEP', 'super_sid', 0, '127.0.0.1', '58Xbb6RVqk55sNS_wNe6', NULL, '5f3ffb2c6a8b4b87485195ac03e729e8c075b681275d40e405365f503a0ff8f97fcfbd210a5a37a34af213d35f6354d8b726125c697569cf5278bd38e64b50c0', 1, NULL, NULL, 'sid.ravichandran@gmail.com')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering success
+
+ActionView::MissingTemplate (Missing template success.erb in view path app/views):
+  app/controllers/users_controller.rb:12:in `create'
+
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-27 18:59:54) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"ZE/GdtQos56rcrIkl8NaiPU8LY9Ma0t3rUy1pPjEx0U=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"super_sid", "password"=>"abcabcabc", "email"=>"sid.ravichandran@gmail.com"}}
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'b7a2d187ad2e0e9b32ac916e06379bf18d35caf1d2238dd7e49406c01d173ab2064310373cd28ad8922a90bf15b45e6b4b69d18270873fe95c28f5ae8203201a') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 79ms (View: 8, DB: 5) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-27 19:00:02) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"ZE/GdtQos56rcrIkl8NaiPU8LY9Ma0t3rUy1pPjEx0U=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"super_sid1", "password"=>"abcabcabc", "email"=>"sid.ravichandran1@gmail.com"}}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (35.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravichandran1@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'super_sid1') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '65cb092260f40cbb8878d7ce7d1a3fc97a939e25b8d5a78e02c22353402a1a9c39632842b89d37682186944bbb02992447edf6285a98c2d97455851092422208') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'super_sid1') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '5f3ffb2c6a8b4b87485195ac03e729e8c075b681275d40e405365f503a0ff8f97fcfbd210a5a37a34af213d35f6354d8b726125c697569cf5278bd38e64b50c0') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-27 13:30:02', '4eafbcae10eb051dc335a0b55048e7b464a694d1f7677a2d43afff99345a85e61e663a04a0a29f13f2e9ac1ec877a72ad4dbbdd581b0cb20b084b72f199ba133', '2010-09-27 13:30:02', 'Ft37ahNKqKxfoz0RY4Um', 'super_sid1', NULL, NULL, 'oRzptL4SNO9TeBsFc-2o', NULL, '65cb092260f40cbb8878d7ce7d1a3fc97a939e25b8d5a78e02c22353402a1a9c39632842b89d37682186944bbb02992447edf6285a98c2d97455851092422208', NULL, NULL, NULL, 'sid.ravichandran1@gmail.com')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/success
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 69ms (View: 6, DB: 41) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-27 19:00:30) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 9ms (View: 6, DB: 1) | 200 OK [http://localhost/users/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-27 19:00:36) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 65ms (View: 9, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (24.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-28 16:00:10) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/prototype.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-28 16:00:10) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/effects.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:00:15) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.5ms)
+Rendered shared/_footer (1.6ms)
+Completed in 128ms (View: 57, DB: 71) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:00:32) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid", "password"=>"abcabcabc", "email"=>"sid@ibloomtech.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f82d65a92acc4e4438e8df0beabb60f2bf7fcf1c372cbd516ccec06f9ba7227540b8c06d558fec9c828640a0b614d06800bde45005df55859aed999979a6aa21') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 10:30:32', 'af0e90e45ee80bfe8e02e25a92557683f389dfffc9d03451ed0f97b6ad138e2709921ffc7ca6f0088d9b16d07ac82b0bc87260f592d1e6ce8ec5ffd304169453', '2010-09-28 10:30:32', 'zGiL8yWADGoxxaw4Xtch', 'supersid', 0, '127.0.0.1', 'rS_gILR0JhDZhYgnOgQ9', NULL, 'f82d65a92acc4e4438e8df0beabb60f2bf7fcf1c372cbd516ccec06f9ba7227540b8c06d558fec9c828640a0b614d06800bde45005df55859aed999979a6aa21', 1, NULL, NULL, 'sid@ibloomtech.com')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.replace):
+  app/models/user_observer.rb:3:in `after_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+  app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (102.2ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (56.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:02:38) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid", "password"=>"abcabcabc", "email"=>"sid@ibloomtech.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2ebe615fc4fa57f76439950aa8f9a3c72de0141c204449463f0059db1e39b747348cf40d30e72e54719ce0049e84377eb080ef18e76719900b95ff0a279ebb25') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f82d65a92acc4e4438e8df0beabb60f2bf7fcf1c372cbd516ccec06f9ba7227540b8c06d558fec9c828640a0b614d06800bde45005df55859aed999979a6aa21') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'f82d65a92acc4e4438e8df0beabb60f2bf7fcf1c372cbd516ccec06f9ba7227540b8c06d558fec9c828640a0b614d06800bde45005df55859aed999979a6aa21') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 10:32:38', 'afda2cbce04745ca778a8d653d60169acc9b690e0977a5ca8f99d3fdc63b6781af3cf06f2da16583922a6159a6e78e4339327cbfbcc35b0eb1fbfaa1da607c01', '2010-09-28 10:32:38', 'QEQer_TEfpLuPNYnl6Wg', 'supersid', 0, '127.0.0.1', '1U2IYP1RWb1_UUbsy1AV', NULL, '2ebe615fc4fa57f76439950aa8f9a3c72de0141c204449463f0059db1e39b747348cf40d30e72e54719ce0049e84377eb080ef18e76719900b95ff0a279ebb25', 1, NULL, NULL, 'sid@ibloomtech.com')[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.replace):
+  app/models/user_observer.rb:3:in `after_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+  app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (108.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:02:53) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid", "password"=>"abcabcabc", "email"=>"sid@ibloomtech1.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech1.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '7ad67a2c8b54ed9f34330486827950704eaa647010787a9ecdfc8d8cb272e4ece7e794456e7aa82ba3cb8d6e8d9ebc8c1516b0f31afc252cca221e763a727713') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2ebe615fc4fa57f76439950aa8f9a3c72de0141c204449463f0059db1e39b747348cf40d30e72e54719ce0049e84377eb080ef18e76719900b95ff0a279ebb25') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '2ebe615fc4fa57f76439950aa8f9a3c72de0141c204449463f0059db1e39b747348cf40d30e72e54719ce0049e84377eb080ef18e76719900b95ff0a279ebb25') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 10:32:53', '4d290d9bcc973a108d7b447b6f3862ec2a7afadefc05406b5b91fd547d841ef68f9d02c2ae03136d891bdb176cfb76c1f45064466493e368eec78e9b0526e402', '2010-09-28 10:32:53', 'U-vLXjSwebH7Qwwu3eJS', 'supersid', 0, '127.0.0.1', 'sQgRwtaeebeSWl1xl2Y5', NULL, '7ad67a2c8b54ed9f34330486827950704eaa647010787a9ecdfc8d8cb272e4ece7e794456e7aa82ba3cb8d6e8d9ebc8c1516b0f31afc252cca221e763a727713', 1, NULL, NULL, 'sid@ibloomtech1.com')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.replace):
+  app/models/user_observer.rb:3:in `after_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+  app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (106.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (61.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:04:24) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid", "password"=>"abcabcabc", "email"=>"sid@ibloomtech1.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech1.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'a78836e600a5e0e2d3f9bb3c1ae94d75129e603371d4e6fdbf1a021948c1cf0b38acce326bb0e40174ff35e00a3b746d9629acc3a7206859e322ec0978bc9a5e') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '7ad67a2c8b54ed9f34330486827950704eaa647010787a9ecdfc8d8cb272e4ece7e794456e7aa82ba3cb8d6e8d9ebc8c1516b0f31afc252cca221e763a727713') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '7ad67a2c8b54ed9f34330486827950704eaa647010787a9ecdfc8d8cb272e4ece7e794456e7aa82ba3cb8d6e8d9ebc8c1516b0f31afc252cca221e763a727713') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 10:34:24', '2ce7b2bc6eb533c8eef3b5fa05e51b1aff1310d36cde3ac903d3080e3a6b2354164b7982d5c9b54fd9326ee6257d670db00a314034d070a582ebf1df101225f4', '2010-09-28 10:34:24', '5ysOt1K68VWFQN0t_tkM', 'supersid', 0, '127.0.0.1', 'qawVu-wNc-uiPr0XynLS', NULL, 'a78836e600a5e0e2d3f9bb3c1ae94d75129e603371d4e6fdbf1a021948c1cf0b38acce326bb0e40174ff35e00a3b746d9629acc3a7206859e322ec0978bc9a5e', 1, NULL, NULL, 'sid@ibloomtech1.com')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.replace):
+  app/models/user_observer.rb:3:in `after_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+  app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (107.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:04:45) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid", "password"=>"abcabcabc", "email"=>"sid@ibloomtech1.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech1.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'df7ccfc61af88e53fbf8311e31adfdd1452248680301254154a2466891727ba5c1b426545401d82736d5a858fe60667110cb8913d60b5b9e0cc4162a9a1fa899') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a78836e600a5e0e2d3f9bb3c1ae94d75129e603371d4e6fdbf1a021948c1cf0b38acce326bb0e40174ff35e00a3b746d9629acc3a7206859e322ec0978bc9a5e') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'a78836e600a5e0e2d3f9bb3c1ae94d75129e603371d4e6fdbf1a021948c1cf0b38acce326bb0e40174ff35e00a3b746d9629acc3a7206859e322ec0978bc9a5e') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 10:34:45', '2a8b1082114f42d0b2f0f4bcfee3e54dcabb83345ad98ffc238e4b708847c64e7e54ee68fc6f30b87b00665aac1eb653bc3c1808962f4df7356da7f1e368025d', '2010-09-28 10:34:45', '-Pku4nWXam53QIWZoCzo', 'supersid', 0, '127.0.0.1', 'K-CZN-8dE_OzR_E_9a_9', NULL, 'df7ccfc61af88e53fbf8311e31adfdd1452248680301254154a2466891727ba5c1b426545401d82736d5a858fe60667110cb8913d60b5b9e0cc4162a9a1fa899', 1, NULL, NULL, 'sid@ibloomtech1.com')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.replace):
+  app/models/user_observer.rb:3:in `after_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+  app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (105.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (76.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:07:43) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid", "password"=>"abcabcabc", "email"=>"sid@ibloomtech1.com"}}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech1.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'df7ccfc61af88e53fbf8311e31adfdd1452248680301254154a2466891727ba5c1b426545401d82736d5a858fe60667110cb8913d60b5b9e0cc4162a9a1fa899') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'df7ccfc61af88e53fbf8311e31adfdd1452248680301254154a2466891727ba5c1b426545401d82736d5a858fe60667110cb8913d60b5b9e0cc4162a9a1fa899') LIMIT 1[0m
+  [4;35;1mUser Create (0.5ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 10:37:43', '617377fcb8a152ff47e8ce62a4493700bde28f0d59ba4a3b1edd9cdfe295ad5bbaee717cc3a4bfabedbb23a060fea0d297eaf1bae5abf9e895a4e0b12c41c4df', '2010-09-28 10:37:43', 'f7WCXrIr93gASPbV9v3W', 'supersid', 0, '127.0.0.1', '_FEvxGNLahQLHN3Hynn7', NULL, '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a', 1, NULL, NULL, 'sid@ibloomtech1.com')[0m
+  [4;36;1mSQL (14.9ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/success
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 64ms (View: 8, DB: 94) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:08:19) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid", "password"=>"abcabcabc", "email"=>"sid@ibloomtech12.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech12.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '6dbcc131736be2272f23021b989cc15ec098099caa9c7098b8f217cb05dd85ce2c65db9adf71b5457d8d82cce147900303141f2727a1b7e1ee90f21d7ab0e9fa') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 19ms (View: 8, DB: 5) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:08:22) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid123", "password"=>"abcabcabc", "email"=>"sid@ibloomtech12.com"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech12.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid123') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'c42f78474af728d1c91020a782d7a9333fb7e58c908bd737484d9b0e622b6a11e49d26432c6e65d907555c33a89cc65692a5624da9830306f0563d27d8284e5d') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid123') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 10:38:22', '2acc4be21f51d9cbce1466d702c5950254200893c9a8b529b2492f7c54da2543ac966bfcda61216032fef2c1601a466112d1d31ea391da3e30d735c4b030a24e', '2010-09-28 10:38:22', 'M-xFkGUO-20PdHJL9PL2', 'supersid123', NULL, NULL, '_UQV0kMziA7B0Vm0eZpg', NULL, 'c42f78474af728d1c91020a782d7a9333fb7e58c908bd737484d9b0e622b6a11e49d26432c6e65d907555c33a89cc65692a5624da9830306f0563d27d8284e5d', NULL, NULL, NULL, 'sid@ibloomtech12.com')[0m
+Sent mail to sid@ibloomtech12.com
+
+Date: Tue, 28 Sep 2010 10:38:22 +0530
+From: registration@InspireMe.com
+To: sid@ibloomtech12.com
+Subject: Registration Success- Welcome to InspireMe.com
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4ca1c59e6f0a4_6de82495d54112
+
+
+--mimepart_4ca1c59e6f0a4_6de82495d54112
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<html>
+  <head>
+    <meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Ty=
+pe" />
+
+  </head>
+
+  <body>
+	<p>Dear supersid123</p>
+
+	<p>You have successfully signed up with <a href=3D"http://inspireMe.com"=
+>InspireMe</a></p>
+        <p> Please click the link to activate your account </p>
+
+
+
+	<p>Thanks, </p>
+	<p>InspireMe Team </p>
+
+	<p><small>You are receiving this e-mail because you are a registered use=
+r of InspireMe.com. Please do not reply to this e-mail.</small></p>
+  </body>
+
+</html>=
+
+--mimepart_4ca1c59e6f0a4_6de82495d54112--
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/success
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 252ms (View: 3, DB: 39) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:17:07) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.4ms)
+Rendered shared/_footer (0.5ms)
+Completed in 113ms (View: 108, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:17:20) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid123", "password"=>"abcabcabc", "email"=>"sid@ibloomtech.com"}}
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid123') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'af943012d7313b62c60bd305aadaa0c986799f0fff55df730f973eb2415fb2d431cbba255d5bb6e4de1fece6eba16e8a831309aa75217353f73f6e41b50bddce') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid123') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 179ms (View: 9, DB: 38) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing ApplicationController#create (for 127.0.0.1 at 2010-09-28 16:18:03) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid123123", "password"=>"abcabcabc", "email"=>"sid@ibloomtech123.com"}}
+
+SyntaxError (/Users/SIDDHARTH/rails_apps/inspire_me/app/controllers/users_controller.rb:13: syntax error, unexpected tASSOC, expecting kEND
+      redirect_to => "success"
+                    ^):
+  
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:19:13) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid123123", "password"=>"abcabcabc", "email"=>"sid@ibloomtech123.com"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech123.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid123123') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '412497ac9b0e512c0493bd85f8dee300e7e61fb34e69286614be4e4f9a069134a9a8a5c6bdf608bc3b7f5fadfc04874059576f0cf80b5c0c73229114590fbadf') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid123123') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 10:49:13', '43c663562bee49ad99870772ea109733cbca0a14d60d4c99616b958c5dbe95a38fe4fa82d375f9adef8972cbf45da6d460f685b81358a92828c0969f4cb1765f', '2010-09-28 10:49:13', 'vnpWP7gjG71Jf7hZFwOx', 'supersid123123', NULL, NULL, 'QmheCY7KIhTSh9ZciK32', NULL, '412497ac9b0e512c0493bd85f8dee300e7e61fb34e69286614be4e4f9a069134a9a8a5c6bdf608bc3b7f5fadfc04874059576f0cf80b5c0c73229114590fbadf', NULL, NULL, NULL, 'sid@ibloomtech123.com')[0m
+Sent mail to sid@ibloomtech123.com
+
+Date: Tue, 28 Sep 2010 10:49:13 +0530
+From: registration@InspireMe.com
+To: sid@ibloomtech123.com
+Subject: Registration Success- Welcome to InspireMe.com
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4ca1c829f2d83_74e81caa33819f
+
+
+--mimepart_4ca1c829f2d83_74e81caa33819f
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<html>
+  <head>
+    <meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Ty=
+pe" />
+
+  </head>
+
+  <body>
+	<p>Dear supersid123123</p>
+
+	<p>You have successfully signed up with <a href=3D"http://inspireMe.com"=
+>InspireMe</a></p>
+        <p> Please click the link to activate your account </p>
+
+
+
+	<p>Thanks, </p>
+	<p>InspireMe Team </p>
+
+	<p><small>You are receiving this e-mail because you are a registered use=
+r of InspireMe.com. Please do not reply to this e-mail.</small></p>
+  </body>
+
+</html>=
+
+--mimepart_4ca1c829f2d83_74e81caa33819f--
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3001/success
+Completed in 216ms (DB: 8) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#success (for 127.0.0.1 at 2010-09-28 16:19:14) [GET]
+Rendering template within layouts/application
+Rendering users/success
+Rendered shared/_user_navigation (0.7ms)
+Rendered shared/_footer (0.6ms)
+Completed in 25ms (View: 23, DB: 2) | 200 OK [http://localhost/success]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:24:24) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"supersid123123", "password"=>"abcabcabc", "email"=>"sid@ibloomtech123.com"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid@ibloomtech123.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'supersid123123') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '8b065eabb39b933c8fcf01a22ffef62cf17c785bd4594c441dd7aabd49b9f0acc53b937089fa405bab15a4325eb265a6c7090d806df6a5d30bbfb76d1c45dde0') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'supersid123123') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 26ms (View: 15, DB: 5) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-28 16:28:12) [GET]
+
+ActionController::RoutingError (No route matches "/user/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:28:18) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 33ms (View: 7, DB: 26) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:28:57) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 34ms (View: 32, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:29:45) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (1.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:30:06) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 73ms (View: 71, DB: 5) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:30:14) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 14ms (View: 12, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:30:29) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 9ms (View: 7, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:30:38) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 37ms (View: 9, DB: 29) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:30:48) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 11ms (View: 9, DB: 4) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:31:35) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 55ms (View: 10, DB: 46) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:31:58) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 63ms (View: 10, DB: 54) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:32:05) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 9ms (View: 7, DB: 4) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:32:15) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 9ms (View: 7, DB: 4) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:32:41) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 9ms (View: 7, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:32:51) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:32:59) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (1.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:33:34) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 10ms (View: 8, DB: 6) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:33:38) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 7, DB: 4) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 16:34:33) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:34:42) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"", "username"=>"", "password"=>"", "email"=>""}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY '') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY '') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '886b6e5441d16a0b5915e17ebebc17f39d98f03ae9ee06a11442f759a812368c0b79d0d1713313d90e963552080191f566183fb345303b00fd351579b483f14b') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY '') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 78ms (View: 14, DB: 5) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 16:35:25) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"cccccc", "password"=>"abcabcabc", "email"=>"sid.ravi123123chandran123@gmail.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'sid.ravi123123chandran123@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'cccccc') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'd7c56b59b38505448708f24c7c0abf02708c6ae9ae5ee454922da2be2918c4be150f4b756fe62a4bfbe1285813192197d2f58af5c3c56e888e6b1159abdee726') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'cccccc') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 11:05:25', '21551c96c110ad24ff151d07b56d7dd797c6d2c4fbaef082c8ccd570c50fc7c82cde80d6911478d977b56a602960cf2defda1f8da3eb5574da89b42a7d33ffe7', '2010-09-28 11:05:25', 'AhEdBP2KmEOGx7nNCJMD', 'cccccc', NULL, NULL, '8AV3oqEmWF1xD0JzNaqW', NULL, 'd7c56b59b38505448708f24c7c0abf02708c6ae9ae5ee454922da2be2918c4be150f4b756fe62a4bfbe1285813192197d2f58af5c3c56e888e6b1159abdee726', NULL, NULL, NULL, 'sid.ravi123123chandran123@gmail.com')[0m
+Sent mail to sid.ravi123123chandran123@gmail.com
+
+Date: Tue, 28 Sep 2010 11:05:25 +0530
+From: registration@InspireMe.com
+To: sid.ravi123123chandran123@gmail.com
+Subject: Registration Success- Welcome to InspireMe.com
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4ca1cbf566cdd_74e81bfb1f8332
+
+
+--mimepart_4ca1cbf566cdd_74e81bfb1f8332
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<html>
+  <head>
+    <meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Ty=
+pe" />
+
+  </head>
+
+  <body>
+	<p>Dear cccccc</p>
+
+	<p>You have successfully signed up with <a href=3D"http://inspireMe.com"=
+>InspireMe</a></p>
+        <p> Please click the link to activate your account </p>
+
+
+
+	<p>Thanks, </p>
+	<p>InspireMe Team </p>
+
+	<p><small>You are receiving this e-mail because you are a registered use=
+r of InspireMe.com. Please do not reply to this e-mail.</small></p>
+  </body>
+
+</html>=
+
+--mimepart_4ca1cbf566cdd_74e81bfb1f8332--
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/success
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 28ms (View: 3, DB: 6) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (31.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (63.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (19.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (32.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateSessions (20100922115743)
+Migrating to CreateUsers (20100922120152)
+Migrating to AddAuthlogicColumnsToUser (20100923085412)
+Migrating to AddActivatedToUser (20100928112512)
+  [4;35;1mSQL (128.2ms)[0m   [0mALTER TABLE `users` ADD `activated` tinyint(1) DEFAULT 0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100928112512')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (16.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` ORDER BY users.id DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` ORDER BY users.id DESC LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 17:25:14) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.5ms)
+Rendered shared/_footer (0.6ms)
+Completed in 54ms (View: 50, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:25:36) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '5b0e561bfc97609c6080055597ae1ce13389961c3a4f56ff24292c0056a39d4ae25f3105bee808c54324a98a4c580101bbf3019942ab844554eb20faff03d68a') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 11:55:36', '0cdcc9a63f596f12054f3d08d634ccc8f3a04f3876b922acad7beb8c692ec4653ce52d267ea6a9f97ac0409c10ff083931ba02ec45246b8d6752b60eb30d8929', '2010-09-28 11:55:36', 'hVGM9j6VsKtEO_4WZ3G_', 'gupperson', NULL, NULL, '478wR7LjIsHxOm_5X5j6', NULL, '5b0e561bfc97609c6080055597ae1ce13389961c3a4f56ff24292c0056a39d4ae25f3105bee808c54324a98a4c580101bbf3019942ab844554eb20faff03d68a', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mROLLBACK[0m
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #11 of app/views/user_mailer/activation_email.text.html.erb:
+8: 	<p>Dear <%= h @user.username%></p>
+9: 
+10: 	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+11:         <p> Please click the link to activate your account <%= activation_url + "#{@user.perishable_token}" %></p>
+12: 
+13: 
+14: 
+
+    (eval):20:in `activation_url'
+    app/views/user_mailer/activation_email.text.html.erb:11
+    app/models/user_observer.rb:3:in `after_create'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (118.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:25:59) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '352f2d91df7b7d6ab765658de4979bf9fd62d4772b08ebc92a389c2de3348ec8b9aff995420c2a9a911e69938132da1136f63f718ac9ed8c8c3a0febceddfea3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 11:55:59', '1eb9313c1f0e53610ae55e4576268df937a7ef56e1417348defe19076d56e09d18da57d4fe47138f258f9b266166f1d9fac64568590b6d3bc9396a618c1fa900', '2010-09-28 11:55:59', '6VcfjD3w9cQevNATshsX', 'gupperson', NULL, NULL, 'OGX90E54ssWYcWPkFpXc', NULL, '352f2d91df7b7d6ab765658de4979bf9fd62d4772b08ebc92a389c2de3348ec8b9aff995420c2a9a911e69938132da1136f63f718ac9ed8c8c3a0febceddfea3', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #11 of app/views/user_mailer/activation_email.text.html.erb:
+8: 	<p>Dear <%= h @user.username%></p>
+9: 
+10: 	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+11:         <p> Please click the link to activate your account <%= activation_url + "#{@user.perishable_token}" %></p>
+12: 
+13: 
+14: 
+
+    (eval):20:in `activation_url'
+    app/views/user_mailer/activation_email.text.html.erb:11
+    app/models/user_observer.rb:3:in `after_create'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (115.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:29:05) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'b0acd7e56456eeb7445ef307c9ffb27a8048770bc3c633a0ae83ef060403ab7ac07faae2bb0d29617f20993368bb4b453bef179727fcf548092fdb7356aa73ba') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 11:59:05', '000bb296f89ef1ccd967e9c776f4786f4158d2438137cdfd225b6c34d3aead17d6e482e16c944fa2188f9e15d2737f1fcc3665d202d19880de2ba55c5fbfbfbc', '2010-09-28 11:59:05', 'JJcmv6sArJzse9or_0Wp', 'gupperson', NULL, NULL, 'xsZVW4mtr298F84Jztto', NULL, 'b0acd7e56456eeb7445ef307c9ffb27a8048770bc3c633a0ae83ef060403ab7ac07faae2bb0d29617f20993368bb4b453bef179727fcf548092fdb7356aa73ba', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mROLLBACK[0m
+
+ActionView::TemplateError (undefined local variable or method `activate_url' for #<ActionView::Base:0x103505f88>) on line #11 of app/views/user_mailer/activation_email.text.html.erb:
+8: 	<p>Dear <%= h @user.username%></p>
+9: 
+10: 	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+11:         <p> Please click the link to activate your account <%= activate_url + "#{@user.perishable_token}" %></p>
+12: 
+13: 
+14: 
+
+    app/views/user_mailer/activation_email.text.html.erb:11
+    app/models/user_observer.rb:3:in `after_create'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (110.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:29:54) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '785f72b91d48ab3e6d43b596ee8894e8743bfbe02540ccb68d35213ac41ffb05b6afb90ae4dad1c556b7033d2107700480e13016c2aeb3f9ecd9028c6338544c') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;36;1mUser Load (3.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 11:59:54', '66cd61694b0f8064036dae0eb025e6332beb81852427da9a885a0b3152786b586ebff06db2b8097524fa97571ed4014120e4ae69804426f6f6ffef8757b8bcc2', '2010-09-28 11:59:54', 'dJyelUFlcRw2Fe2zD5sw', 'gupperson', NULL, NULL, 'by6CwHOvohmKOrx9Oo1F', NULL, '785f72b91d48ab3e6d43b596ee8894e8743bfbe02540ccb68d35213ac41ffb05b6afb90ae4dad1c556b7033d2107700480e13016c2aeb3f9ecd9028c6338544c', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mROLLBACK[0m
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #11 of app/views/user_mailer/activation_email.text.html.erb:
+8: 	<p>Dear <%= h @user.username%></p>
+9: 
+10: 	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+11:         <p> Please click the link to activate your account <%= activation_url + "/#{@user.perishable_token}" %></p>
+12: 
+13: 
+14: 
+
+    (eval):20:in `activation_url'
+    app/views/user_mailer/activation_email.text.html.erb:11
+    app/models/user_observer.rb:3:in `after_create'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (65.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:31:41) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '3d1602844d4dbbdb4abd2e7376431d182c19c52cd6d1ba72760ce1eb534a6a6d5af30884a6270c899f01f45e46f7b22e796e69b7b14d66b26529f12d93585e40') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 12:01:41', 'eea566aebf0e1840cdfed612a43d33d6a27d2616587092a9ea79b13f404d588aad775f398f149c96259e44b59355310692c90b3954a6872973d0173ffe35d141', '2010-09-28 12:01:41', 'crEdOGhxIgds6Nb-sE9F', 'gupperson', NULL, NULL, 'gX6rPyvVTfJEwr6lRyCw', NULL, '3d1602844d4dbbdb4abd2e7376431d182c19c52cd6d1ba72760ce1eb534a6a6d5af30884a6270c899f01f45e46f7b22e796e69b7b14d66b26529f12d93585e40', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mROLLBACK[0m
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #11 of app/views/user_mailer/activation_email.text.html.erb:
+8: 	<p>Dear <%= h @user.username%></p>
+9: 
+10: 	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+11:         <p> Please click the link to activate your account <%= activation_url + "/#{@user.perishable_token}" %></p>
+12: 
+13: 
+14: 
+
+    (eval):20:in `activation_url'
+    app/views/user_mailer/activation_email.text.html.erb:11
+    app/models/user_observer.rb:3:in `after_create'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (49.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 17:31:46) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 35ms (View: 7, DB: 30) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (15.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:31:53) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '77d1577e14bfe495220c46f830ad25e20738e6f79f0a8eb5cff3e61f98b0e9fbf31d8b57d9f33d390141e72e1271eb6bcd162c9556e8c609a18d1b5770c0a0c0') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 12:01:53', '8b827fa2908434f771b587f2fc9acd9bc511be81e0600a55f68089cc1fbc5c1bffabff3e4fc1c59e926a3df4f7f3c67e04867363a242e2b28d882810d6cf6bc3', '2010-09-28 12:01:53', 'oIAlWPBCHEJ3WXxxbM4I', 'gupperson', NULL, NULL, 'EusFaOouGTp4JmsezQFb', NULL, '77d1577e14bfe495220c46f830ad25e20738e6f79f0a8eb5cff3e61f98b0e9fbf31d8b57d9f33d390141e72e1271eb6bcd162c9556e8c609a18d1b5770c0a0c0', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+  [4;35;1mSQL (317.5ms)[0m   [0mROLLBACK[0m
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #11 of app/views/user_mailer/activation_email.text.html.erb:
+8: 	<p>Dear <%= h @user.username%></p>
+9: 
+10: 	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+11:         <p> Please click the link to activate your account <%= activation_url + "/#{@user.perishable_token}" %></p>
+12: 
+13: 
+14: 
+
+    (eval):20:in `activation_url'
+    app/views/user_mailer/activation_email.text.html.erb:11
+    app/models/user_observer.rb:3:in `after_create'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (58.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (18.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (52.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-09-28 17:44:01) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 10ms (View: 8, DB: 53) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:44:16) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '4cbdc4ee459b43dc603511ce97671318e071296844ed6438b8c313528a44e376aa3c2f0f8b240fed08a7888d3ce275937d525d8322098339b852398a892631d8') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 12:14:16', '084432d59e15e1f403cdc9b7c29d873f60e336ca801a143451d11075d3bb3bbe99e82b3702cca60a2f8ed28207d8e8727ff3f2c4b44577089105e8dce257f3e8', '2010-09-28 12:14:16', '1OEhUWjiFOvElQciyOBe', 'gupperson', NULL, NULL, 'D8SCUk8scX36S0uWSJ-v', NULL, '4cbdc4ee459b43dc603511ce97671318e071296844ed6438b8c313528a44e376aa3c2f0f8b240fed08a7888d3ce275937d525d8322098339b852398a892631d8', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mROLLBACK[0m
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #11 of app/views/user_mailer/activation_email.text.html.erb:
+8: 	<p>Dear <%= h @user.username%></p>
+9: 
+10: 	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+11:         <p> Please click the link to activate your account <%= activation_url + "/#{@user.perishable_token}" %></p>
+12: 
+13: 
+14: 
+
+    (eval):20:in `activation_url'
+    app/views/user_mailer/activation_email.text.html.erb:11
+    app/models/user_observer.rb:3:in `after_create'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (116.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:45:05) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '95ef11c50412d918f4e97be4757d322d59bf3537cd4ad8f43c110e822f8e32344b4b696b558d65067c8cfcc24a3f31a4a9e9c7883b7ed6cec512222fbfe8f1d3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 12:15:05', '3d3decbbfeeaac7395302cd4917b60aaeec6a3f83cd7712c674c6d4d3d0df3c1ce219fd5217e8b02003b303260e710f830f85437f09b03a48ca3c3dd7c1d1700', '2010-09-28 12:15:05', 'KFwvC_vpbiqwcRASx8d9', 'gupperson', NULL, NULL, '0OX3P7PkNJ5xndZXtqVF', NULL, '95ef11c50412d918f4e97be4757d322d59bf3537cd4ad8f43c110e822f8e32344b4b696b558d65067c8cfcc24a3f31a4a9e9c7883b7ed6cec512222fbfe8f1d3', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]):
+  (eval):20:in `activation_url'
+  app/models/user_mailer.rb:9:in `activation_email'
+  app/models/user_observer.rb:3:in `after_create'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+  app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (106.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:49:59) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson", "password"=>"abcabcabc", "email"=>"nandi.priyanka@gmail.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '38491b1bc3eae1e3026f0d1bb1ea3521ebda126a1581da1b73af5f5fe9789356e17f5ee2984376becec2b4e004f776d313ade395d75ae4382dbaf67d75b1d09a') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 12:19:59', '20a7c0a46e30cc27938d9d4e4e947c173902637fb5159b86226befb2ecae2dc2e4714140aa84bc335cd97d63467d8b471d72516055d6e3d7fc423809e32bc109', '2010-09-28 12:19:59', 'rXahPfxu0R5FK5GLPFNe', 'gupperson', NULL, NULL, 'LDInyYxUhYnwueRxiVpH', NULL, '38491b1bc3eae1e3026f0d1bb1ea3521ebda126a1581da1b73af5f5fe9789356e17f5ee2984376becec2b4e004f776d313ade395d75ae4382dbaf67d75b1d09a', NULL, 0, NULL, NULL, 'nandi.priyanka@gmail.com')[0m
+Sent mail to nandi.priyanka@gmail.com
+
+Date: Tue, 28 Sep 2010 12:19:59 +0530
+From: registration@InspireMe.com
+To: nandi.priyanka@gmail.com
+Subject: Registration Success- Welcome to InspireMe.com
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4ca1dd6f5aa16_7b481b4ddf01a9
+
+
+--mimepart_4ca1dd6f5aa16_7b481b4ddf01a9
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<html>
+  <head>
+    <meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Ty=
+pe" />
+
+  </head>
+
+  <body>
+	<p>Dear gupperson</p>
+
+	<p>You have successfully signed up with <a href=3D"http://inspireMe.com"=
+>InspireMe</a></p>
+        <p> Please click the link to activate your account /activate/rXah=
+Pfxu0R5FK5GLPFNe
+
+
+
+	<p>Thanks, </p>
+	<p>InspireMe Team </p>
+
+	<p><small>You are receiving this e-mail because you are a registered use=
+r of InspireMe.com. Please do not reply to this e-mail.</small></p>
+  </body>
+
+</html>=
+
+--mimepart_4ca1dd6f5aa16_7b481b4ddf01a9--
+  [4;35;1mSQL (0.8ms)[0m   [0mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/success
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 39ms (View: 5, DB: 5) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:51:44) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson2", "password"=>"abcabcabc", "email"=>"nandi.priyanka2@gmail.com"}}
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka2@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson2') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '2bf15e8dab775bd74fc5a1ee9670fc5d795d88f1fd272a80afd016857368e313fd4ed35709c13c8e4657bddf150184ce4cb066b762b8f230245c4027d5667372') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson2') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 12:21:44', '0344ffc2e0879505572c2d0e3d6fcc35b0335a7f90b2dc245ec825f50248be87c571823382ccc335479b0307d1f256f9ed0d2e7f9cb882e944ca26d8b8e02271', '2010-09-28 12:21:44', 'hDgWmHOcJkgVGRpCcIXP', 'gupperson2', NULL, NULL, 'vFtB0wXqY6UqHcQVUgW3', NULL, '2bf15e8dab775bd74fc5a1ee9670fc5d795d88f1fd272a80afd016857368e313fd4ed35709c13c8e4657bddf150184ce4cb066b762b8f230245c4027d5667372', NULL, 0, NULL, NULL, 'nandi.priyanka2@gmail.com')[0m
+Sent mail to nandi.priyanka2@gmail.com
+
+Date: Tue, 28 Sep 2010 12:21:44 +0530
+From: registration@InspireMe.com
+To: nandi.priyanka2@gmail.com
+Subject: Registration Success- Welcome to InspireMe.com
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4ca1ddd8638fe_7b481a70f903e1
+
+
+--mimepart_4ca1ddd8638fe_7b481a70f903e1
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<html>
+  <head>
+    <meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Ty=
+pe" />
+
+  </head>
+
+  <body>
+	<p>Dear gupperson2</p>
+
+	<p>You have successfully signed up with <a href=3D"http://inspireMe.com"=
+>InspireMe</a></p>
+        <p> Please click the link to activate your account http://localho=
+st:3000/activate/hDgWmHOcJkgVGRpCcIXP
+
+
+
+	<p>Thanks, </p>
+	<p>InspireMe Team </p>
+
+	<p><small>You are receiving this e-mail because you are a registered use=
+r of InspireMe.com. Please do not reply to this e-mail.</small></p>
+  </body>
+
+</html>=
+
+--mimepart_4ca1ddd8638fe_7b481a70f903e1--
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/success
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 90ms (View: 3, DB: 7) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:52:53) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson2", "password"=>"abcabcabc", "email"=>"nandi.priyanka2@gmail.com"}}
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka2@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'f89113c7f2d30875bc4c1627161d5f962f73c1119de9744fc5d2bf4e7ef8db435486860a22f64510c323baacd743fd40a78f1e201ed99161688e50f9f8386be7') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson2') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 52ms (View: 15, DB: 28) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 17:54:04) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson22", "password"=>"abcabcabc", "email"=>"nandi.priyanka22@gmail.com"}}
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka22@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson22') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '4df8b7e82251ef116b911466f95f85a09f0fe3b5a4c9ee6d5c8bfbcd16bfe23593a1beb506774d6e62de9e583f0bb82db102d043cd7d4ec22ce73feaa02336e5') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson22') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 12:24:04', '84d4b04560126457c987577bbb01498b2a3085da96ed0b8daf96c1471dbc5a9351f0fb8edbd8060841d258ee08ae9c5ea60666585e309c0d5b23c56c5def229d', '2010-09-28 12:24:04', '4WaCvgnoAalLBrhKoaUL', 'gupperson22', NULL, NULL, 'EwSBqvOk8YiLF9zYWEQ4', NULL, '4df8b7e82251ef116b911466f95f85a09f0fe3b5a4c9ee6d5c8bfbcd16bfe23593a1beb506774d6e62de9e583f0bb82db102d043cd7d4ec22ce73feaa02336e5', NULL, 0, NULL, NULL, 'nandi.priyanka22@gmail.com')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mROLLBACK[0m
+
+ActionView::TemplateError (Missing host to link to! Please provide :host parameter or set default_url_options[:host]) on line #11 of app/views/user_mailer/activation_email.text.html.erb:
+8: 	<p>Dear <%= h @user.username%></p>
+9: 
+10: 	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+11:         <p> Please click the link to activate your account <%= "#{activation_url}/#{@user.perishable_token}" %>
+12: 
+13: 
+14: 
+
+    (eval):20:in `activation_url'
+    app/views/user_mailer/activation_email.text.html.erb:11
+    app/models/user_observer.rb:3:in `after_create'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    app/controllers/users_controller.rb:11:in `create'
+
+Rendered rescues/_trace (53.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (12.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-28 18:00:19) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"TIU34XgQLV5MF9hmxdy5UCqQJQjTovPN14hvEPdz2PE=", "user"=>{"password_confirmation"=>"abcabcabc", "username"=>"gupperson22", "password"=>"abcabcabc", "email"=>"nandi.priyanka22@gmail.com"}}
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'nandi.priyanka22@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`username`) = BINARY 'gupperson22') LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '18823b80d4c8079e6fe4a32a3dbad62a6adb326c3ba1ace7e3763d47f81609f495781c5743db8f40c4f7da5b603565a49981d24cab9a1103f0abdda6010c0acf') LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson22') LIMIT 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '182a6c2deabedb0744ecc8fd90d4ff4ee4594d9fb438341854e056bd3992f29d93b932845bc154354d9bd107590755f21ff74107e053dac8f09e7ef6e1dee93a') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO `users` (`created_at`, `crypted_password`, `updated_at`, `perishable_token`, `username`, `failed_login_count`, `current_login_ip`, `password_salt`, `last_name`, `persistence_token`, `login_count`, `activated`, `last_login_at`, `first_name`, `email`) VALUES('2010-09-28 12:30:19', '5de10e0beea3f80bcc307c851b8dfbca93801a9a5a1ccdc3b67956d98fc3ce843fda53eb5431677059624a00b4b32f1baabaa4bd681a4f6c8d309c8ab407e4b1', '2010-09-28 12:30:19', '_mERf6Qsc9F8UgusDGLA', 'gupperson22', NULL, NULL, 'QZdtAwg08RemKOrNTuDp', NULL, '18823b80d4c8079e6fe4a32a3dbad62a6adb326c3ba1ace7e3763d47f81609f495781c5743db8f40c4f7da5b603565a49981d24cab9a1103f0abdda6010c0acf', NULL, 0, NULL, NULL, 'nandi.priyanka22@gmail.com')[0m
+Sent mail to nandi.priyanka22@gmail.com
+
+Date: Tue, 28 Sep 2010 12:30:19 +0530
+From: registration@InspireMe.com
+To: nandi.priyanka22@gmail.com
+Subject: Registration Success- Welcome to InspireMe.com
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4ca1dfdb5bfe9_93d81ca6b201a6
+
+
+--mimepart_4ca1dfdb5bfe9_93d81ca6b201a6
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<html>
+  <head>
+    <meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Ty=
+pe" />
+
+  </head>
+
+  <body>
+	<p>Dear gupperson22</p>
+
+	<p>You have successfully signed up with <a href=3D"http://inspireMe.com"=
+>InspireMe</a></p>
+        <p> Please click the link to activate your account http://localho=
+st:3000/activate/_mERf6Qsc9F8UgusDGLA
+
+
+
+	<p>Thanks, </p>
+	<p>InspireMe Team </p>
+
+	<p><small>You are receiving this e-mail because you are a registered use=
+r of InspireMe.com. Please do not reply to this e-mail.</small></p>
+  </body>
+
+</html>=
+
+--mimepart_4ca1dfdb5bfe9_93d81ca6b201a6--
+  [4;36;1mSQL (16.5ms)[0m   [0;1mCOMMIT[0m
+Rendering template within layouts/application
+Rendering users/success
+Rendered shared/_user_navigation (0.5ms)
+Rendered shared/_footer (0.5ms)
+Completed in 304ms (View: 65, DB: 22) | 200 OK [http://localhost/users]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`perishable_token` = '_mERf6Qsc9F8UgusDGLA') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2010-09-28 18:04:47) [GET]
+  Parameters: {"id"=>"_mERf6Qsc9F8UgusDGLA"}
+  [4;36;1mUser Load (34.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`perishable_token` = '_mERf6Qsc9F8UgusDGLA') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`username` = BINARY 'gupperson22' AND `users`.id <> 23) LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-09-28 12:34:47', `perishable_token` = 'rOsFausN4baLcQf23mHu', `activated` = 1 WHERE `id` = 23[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3001/users/23
+Completed in 49ms (DB: 39) | 302 Found [http://localhost/activate/_mERf6Qsc9F8UgusDGLA]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-28 18:04:47) [GET]
+  Parameters: {"id"=>"23"}
+Rendering template within layouts/application
+Rendering users/show
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 9ms (View: 7, DB: 2) | 200 OK [http://localhost/users/23]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-28 18:16:27) [GET]
+  Parameters: {"id"=>"23"}
+Rendering template within layouts/application
+Rendering users/show
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 34ms (View: 4, DB: 31) | 200 OK [http://localhost/users/23]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-28 18:16:39) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 8ms (View: 6, DB: 3) | 200 OK [http://localhost/users/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-28 18:19:47) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.3ms)
+Completed in 12ms (View: 10, DB: 4) | 200 OK [http://localhost/users/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-28 18:19:49) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.3ms)
+Completed in 36ms (View: 4, DB: 33) | 200 OK [http://localhost/users/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-28 18:20:08) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.1ms)
+Completed in 9ms (View: 7, DB: 2) | 200 OK [http://localhost/users/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-28 18:20:46) [GET]
+  Parameters: {"id"=>"images"}
+Rendering template within layouts/application
+Rendering users/show
+Rendered shared/_user_navigation (0.1ms)
+Rendered shared/_footer (0.2ms)
+Completed in 33ms (View: 4, DB: 30) | 200 OK [http://localhost/users/images/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images (for 127.0.0.1 at 2010-09-28 18:20:48) [GET]
+  Parameters: {"id"=>"not"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images (for 127.0.0.1 at 2010-09-28 18:20:49) [GET]
+  Parameters: {"id"=>"noti"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-28 18:20:51) [GET]
+
+ActionController::RoutingError (No route matches "/users/images/notifications." with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images to jpg (for 127.0.0.1 at 2010-09-28 18:20:52) [GET]
+  Parameters: {"id"=>"notifications"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images to jpg (for 127.0.0.1 at 2010-09-28 18:20:53) [GET]
+  Parameters: {"id"=>"notifications"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images to jpg (for 127.0.0.1 at 2010-09-28 18:20:53) [GET]
+  Parameters: {"id"=>"notifications"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images to jpg (for 127.0.0.1 at 2010-09-28 18:21:20) [GET]
+  Parameters: {"id"=>"notification"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images to jpg (for 127.0.0.1 at 2010-09-28 18:21:28) [GET]
+  Parameters: {"id"=>"notification"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images to jpg (for 127.0.0.1 at 2010-09-28 18:21:29) [GET]
+  Parameters: {"id"=>"notification"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (52.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing UsersController#images to jpg (for 127.0.0.1 at 2010-09-28 18:21:56) [GET]
+  Parameters: {"id"=>"notification"}
+
+ActionController::UnknownAction (No action responded to images. Actions: activate, create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-28 18:23:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/notifiac" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-28 18:23:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/notification." with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

@@ -1,0 +1,143 @@
+/* 
+    Document   : application
+    Created on : Sep 22, 2010, 6:18:12 PM
+    Author     : SIDDHARTH
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+body{
+    background:#FFFFFF;
+    font:14px/1.4 Arial,Helvetica,sans-serif;
+    color:#444444;
+    font-size:14px;
+    font-weight:normal;
+    
+
+}
+
+
+.page-headers{
+    margin-bottom: 1em;
+    border-bottom: 5px solid #D2C9BF;
+    height: 90px;
+    background: url("/images/bg-hero.jpg") repeat-x scroll center center #3E342B
+}
+
+.product-logo{
+    font-size: 35px;
+    font-family:monospace;
+    font-weight:bold;
+    color:#D2C9BF;
+    width:40%;
+    float:left;
+    margin-left:0.5em;
+    
+}
+
+.user-nav{
+    width:30%;
+    float:right;
+}
+/*#365069; */
+.navigation{    
+    /*background:url("/images/nav_bg.jpg");*/
+    
+    height:27px;
+    color:#D2C9BF;
+    padding-bottom: 2px;    
+    float:right;
+}
+.navigation a{
+    
+    padding:5px;    
+    color:#D2C9BF;
+    text-decoration: none;
+    margin-right: 2px;
+    font-size:16px;
+}
+
+.navigation a:hover{
+    padding:5px;    
+    color:#D2C9BF;
+    text-decoration: underline;
+    margin-right: 2px;
+    font-size:16px;
+    
+}
+
+.page-footer{
+    border-top: 5px solid #D2C9BF;
+    background: url("/images/bg-hero.jpg") repeat-x scroll center center #3E342B;
+    height:40px;
+    padding:5px;
+}
+
+.site-footer{
+    float:right;
+}
+
+.site-footer a{
+    padding:5px;
+    color:#D2C9BF;
+    text-decoration: none;
+    margin-right: 2px;    
+}
+
+
+.site-footer a:hover{
+    padding:5px;
+    color:#D2C9BF;
+    text-decoration: underline;
+    margin-right: 2px;    
+}
+
+.page-content{
+    
+}
+
+
+/* REGISTRATION PAGE User#new */
+
+
+.user-signup{
+    border-top: 4px solid maroon;
+    border-left:2px solid #444444;
+    border-right:2px solid #444444;
+    border-bottom:2px solid #444444;
+    color:#444444;
+    width: 30%;
+    padding:5px;
+    margin-left: 400px;
+    margin-bottom:1em;
+    margin-top: 1em;
+
+}
+
+.user-signup label{
+    font-size: 16px;
+    padding:5px;
+    margin-top:0.5em;
+}
+
+.user-signup .elem-field{
+    padding:5px;
+}
+
+.user-signup input[type='text'], .user-signup input[type='password']{
+    height:25px;
+    font-weight: bold;
+}
+
+.flash-message{
+    background:url("/images/notification.jpg") repeat scroll 0 0 transparent;
+    border:2px solid #D2C9BF;
+    color:green;
+    padding:5px;
+    text-align:center;
+}

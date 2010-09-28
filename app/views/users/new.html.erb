@@ -1,0 +1,63 @@
+
+<style>
+
+
+  .formError{
+    color:red;
+    font-size: 12px;
+  }
+
+  .error{
+    border: 1px solid red;
+  }
+</style>
+<div class="user-signup">
+  <% form_for :user,  @user, :url => users_url do |f| %>
+    <div class="elem-set">
+      <label for="username"> Username </label>
+      <div class="elem-field">
+        <%= f.text_field :username, :size => 45 %>
+        <%= error_message_on :user, :username %>
+      </div>
+    </div>
+
+    <div class="elem-set">
+      <label for="username"> Email </label>
+      <div class="elem-field">
+        <%= f.text_field :email, :size => 45 %>
+        <%= error_message_on :user, :email %>
+      </div>
+    </div>
+
+    <div class="elem-set">
+      <label for="username"> Password </label>
+      <div class="elem-field">
+        <%= f.password_field :password, :size => 45 %>
+        <%= error_message_on :user, :password %>
+      </div>
+
+    </div>
+
+    <div class="elem-set">
+      <label for="username"> Password Confirmation </label>
+      <div class="elem-field">
+        <%= f.password_field :password_confirmation, :size => 45 %>
+      </div>
+    </div>
+
+    <div class="elem-set">
+      <div class="elem-field">
+        <%= f.submit "Register" %>
+      </div>
+    </div>
+  <% end  %>
+</div>
+
+
+<% content_for :js do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.fieldWithErrors input').addClass('error');
+    });
+  </script>
+<% end %>

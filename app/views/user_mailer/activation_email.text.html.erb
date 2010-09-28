@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  </head>
+
+  <body>
+	<p>Dear <%= h @user.username%></p>
+
+	<p>You have successfully signed up with <a href="http://inspireMe.com">InspireMe</a></p>
+        <p> Please click the link to activate your account <%= "#{activation_url}/#{@user.perishable_token}" %>
+
+
+
+	<p>Thanks, </p>
+	<p>InspireMe Team </p>
+
+	<p><small>You are receiving this e-mail because you are a registered user of InspireMe.com. Please do not reply to this e-mail.</small></p>
+  </body>
+
+</html>
