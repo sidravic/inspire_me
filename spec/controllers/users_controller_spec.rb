@@ -75,6 +75,14 @@ describe UsersController, "handling POST /users" do
     UserMailer.should_receive(:deliver_activation_email).with(:anything)
   end
 
+
+  it "should clear user session on successful login" do
+    post :create, :user => @params
+    session = UserSession.find
+    session.should eql(nil)
+  end
+  
+
   
 
   

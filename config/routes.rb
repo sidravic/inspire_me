@@ -1,8 +1,17 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "welcome", :action => "index"
+
   map.resources  :user_sessions
-  map.resources :users
+  map.login "/login", :controller => "user_sessions", :action => "login"
+  map.logout "/logout", :controller => "user_sessions", :action => "logout"
+  
+  map.resources :users, :has_many => [:posts]
   map.activation "/activate/:id", :controller => "users", :action => "activate"
+
+  map.resources :photos
+  map.resources :posts, :has_many => [:photos]
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
 

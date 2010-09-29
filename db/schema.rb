@@ -9,7 +9,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100928112512) do
+ActiveRecord::Schema.define(:version => 20100929085658) do
+
+  create_table "images", :force => true do |t|
+    t.integer  "photo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "post_id"
+    t.string   "photo_title"
+    t.string   "photo_taken_with"
+    t.datetime "photo_taken_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

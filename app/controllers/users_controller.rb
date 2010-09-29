@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])    
-    if @user.save      
+    if @user.save
+      clear_session
       render :action => "success"
     else      
       render :action => "new"
