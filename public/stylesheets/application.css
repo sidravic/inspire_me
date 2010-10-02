@@ -141,3 +141,17 @@ body{
     padding:5px;
     text-align:center;
 }
+
+ .error{
+    border: 1px solid red;
+  }
+
+
+  .formError{
+    color:red;
+    font-size: 12px;
+  }
+
+  .error{
+    border: 1px solid red;
+  }
