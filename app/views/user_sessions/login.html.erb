@@ -1,0 +1,26 @@
+<div class="user-signup">
+  <% form_for :user_session, :url => user_sessions_url do |f| %>
+    <div class="elem-set">
+      <label for="username"> Email </label>
+      <div class="elem-field">
+        <%= f.text_field :email, :size => 45 %>
+        
+      </div>
+    </div>
+
+    <div class="elem-set">
+      <label for="username"> Password </label>
+      <div class="elem-field">
+        <%= f.password_field :password, :size => 45 %>
+        
+      </div>
+
+    </div>
+
+    <div class="elem-set">
+      <div class="elem-field">
+        <%= f.submit "Login" %>
+      </div>
+    </div>
+  <% end  %>
+</div>

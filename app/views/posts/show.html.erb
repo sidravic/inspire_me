@@ -1,0 +1,122 @@
+<style>
+  .post-image-set{
+    margin-top:1em;
+    padding:5px 5px 5px;
+  }
+
+  .manage-image-large{
+    background:url("/images/notification.jpg");
+    height:200px;
+    width:20%;
+    float:right
+  }
+
+  .manage-image-large a, .manage-image-large li{
+    font-family: 'Comic Sans Ms';
+    
+    text-align:left;
+    color:#3E342B;
+    list-style: none;
+    text-decoration: none;
+    font-size:14px;
+    padding-top:20px;
+  }
+
+  .manage-image-large a:hover{   
+    font-weight: bold;
+    text-align:left;
+    color:#3E342B;
+    list-style: none;
+    text-decoration: underline;
+    font-size:16px;
+    padding-top:20px;
+  }
+
+  .post-image-large-container{
+    width:60%;
+  }
+
+  .post-image-large{    
+    padding:8px;
+    background:none repeat scroll 0 0 #EEEEEE;
+  }
+
+  .post-image-title{
+    clear:both;
+    font-family: 'Comic Sans Ms';
+    text-align: center;
+    margin-top: 4px;
+    padding:4px;
+    background:none repeat scroll 0 0 #EEEEEE;
+    font-weight: bold;
+
+  }
+
+  .post-image-taken-on{
+    font-size:small;
+    font-weight: bold;
+
+  }
+
+  .post-title{
+    font-weight:bold;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 1px solid #D2C9BF;
+    padding:6px;
+  }
+
+  .manage-image-title{
+    border-bottom:1px dotted #444444;
+    font-size:16px;
+    font-weight:bold;
+    margin-left:20px;
+    padding:3px;
+    text-align:center;
+    width:80%;
+    font-family: 'Comic Sans Ms';
+  }
+
+
+</style>
+
+<% @post.photos.each do |photo| %>
+
+<div class="post-title">
+  <%=h @post.title %>
+</div>
+
+  <div class="post-image-set">
+
+    <div class="manage-image-large">
+      <p class="manage-image-title"> Manage</p>
+      <ul>
+        <li>
+          <%= link_to "Delete", post_url(@post), :method => "delete", :confirm => "Are you sure you wish to delete this photo" %>
+        </li>
+
+        <li>
+          <%= link_to "Edit", edit_post_url(@post)%>
+        </li>
+      </ul>
+    </div>
+
+    <div class="post-image-large-container">
+      <div class="post-image-large">
+        <%= image_tag photo.image.url(:large) %>
+      </div>
+    </div>
+
+    <div class="post-stats">
+      
+    </div>
+    
+  </div>
+
+
+
+  <div class="post-image-title">
+    <%=h photo.photo_title %>
+  </div>
+
+<% end  %>

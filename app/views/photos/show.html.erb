@@ -1,0 +1,96 @@
+<style>
+  .post-image-set{    
+    padding:5px 5px 5px;    
+  }  
+
+  .manage-image-large{
+    background:url("/images/notification.jpg");
+    height:200px;
+    width:20%;
+    float:right    
+  }
+
+  .manage-image-large a, .manage-image-large li{
+    font-family: 'Comic Sans Ms';
+    font-weight: bold;
+    text-align:left;
+    color:#3E342B;
+    list-style: none;
+    text-decoration: none;
+    font-size:16px;
+    padding-top:20px;
+  }
+
+  .manage-image-large a:hover{
+    font-family: 'Comic Sans Ms';
+    font-weight: bold;
+    text-align:left;
+    color:#3E342B;
+    list-style: none;
+    text-decoration: underline;
+    font-size:16px;
+    padding-top:20px;
+  }
+
+  .post-image-large-container{
+    width:59%;
+  }
+  
+  .post-image-large{
+    padding:5px 5px 5px 10px;
+    background:none repeat scroll 0 0 #EEEEEE;       
+  }
+
+  .post-image-title{
+    clear:both;
+    font-family: 'Comic Sans Ms';
+    text-align: center;
+    margin-top: 4px;
+    padding:4px;
+    background:none repeat scroll 0 0 #EEEEEE;
+    font-weight: bold;
+
+  }
+
+  .post-image-taken-on{
+    font-size:small;
+    font-weight: bold;
+    
+}
+
+
+</style>
+
+
+<div class="post-image-set">
+  <div class="manage-image-large">
+    <ul>
+      <li>
+        <%= link_to "Delete", photo_url(@photo), :method => "delete", :confirm => "Are you sure you wish to delete this photo" %>
+      </li>
+
+      <li>
+        <%= link_to "Edit", edit_photo_url(@photo)%>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="post-image-large-container">
+    <div class="post-image-large">
+      <%= image_tag @photo.image.url(:large) %>
+    </div>
+  </div>
+  
+
+
+</div>
+
+
+
+<div class="post-image-title">
+  <%=h @photo.photo_title %>
+</div>
+
+
+

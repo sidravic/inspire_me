@@ -1,0 +1,68 @@
+<style>
+  .user-photo{
+    border-top: 4px solid maroon;
+    border-left:2px solid #444444;
+    border-right:2px solid #444444;
+    border-bottom:2px solid #444444;
+    color:#444444;
+    width: 60%;
+    padding:5px;
+    margin-left: 250px;
+    margin-bottom:1em;
+    margin-top: 1em;
+
+}
+
+.user-photo label{
+    font-size: 16px;
+    padding:5px;
+    margin-top:0.5em;
+}
+
+.user-photo .elem-field{
+    padding:5px;
+}
+
+.user-photo input[type='text'], .user-signup input[type='password']{
+    height:25px;
+    font-weight: bold;
+}
+
+</style>
+<div class="user-photo">
+  <% form_for :photo, :url => photos_url, :html => {:multipart => true} do |f| %>
+    <div class="elem-set">
+      <label for="photo_title"> Title :</label>
+      <div class="elem-field">
+        <%= f.text_field :photo_title, :size => 95  %>
+      </div>
+    </div>
+
+    <div class="elem-set">
+      <label for="photo_taken_with"> Photo Taken with : </label>
+      <div class="elem-field">
+        <%= f.text_field :photo_taken_with, :size => 95 %>
+      </div>
+    </div>
+
+    <div class="elem-set">
+      <label for="photo_taken_on"> Photo Taken on : </label>
+      <div class="elem-field">
+        <%= date_select :photo, :photo_taken_on, {:user_month_number => true } %>
+      </div>
+    </div>
+
+    <div class="elem-set">
+      <label for="photo_taken_on"> Photo : </label>
+      <div class="elem-field">
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+    <div class="elem-set">
+      <div class="elem-field">
+        <%= f.submit "Upload" %>
+      </div>
+    </div>
+  <% end  %>
+</div>
